@@ -1,10 +1,22 @@
 # desafio-samba-tech
 
-etapa 1 - commit initial
+etapa 1 - commit initial *
 
-etapa 2 - criar componentes
+etapa 2 - criar componentes *
 
-etapa 3 - requisição com API
+etapa 3 - requisição com API *
+
+etapa 4 - card *
+
+etapa 5 - navbar
+
+etapa 6 - input search 
+
+etapa 7 - paginação
+
+etapa 8 - CSS
+
+etapa 9 - Modal individual
 
 ##########################################################################
 ##########################################################################

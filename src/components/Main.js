@@ -2,8 +2,8 @@
 import React from "react";
 //importando a pagina de error
 import ErrorPage from "./error/ErrorPage";
-// Importando os components necessárias da lib react-materialize
-import { Container } from 'react-materialize';
+// Importando os components necessárias da lib react-bootstrap
+import { Container } from 'react-bootstrap';
 // Importanto o component <Switch /> e <Route /> da nossa Lib de rotas
 import { Switch, Route } from 'react-router-dom'
 import BreakingBad from "./breaking-bad/BreakingBad";
