@@ -8,9 +8,9 @@ etapa 3 - requisição com API *
 
 etapa 4 - card *
 
-etapa 5 - navbar
+etapa 5 - input search *
 
-etapa 6 - input search 
+etapa 6 - navbar 
 
 etapa 7 - paginação
 
