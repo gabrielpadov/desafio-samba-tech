@@ -76,7 +76,7 @@ class BreakingBad extends React.Component {
   onChangePagination(num,e){
     e.preventDefault();                                                                                                                                                                                                                                         
     // console.log(num);
-    this.setState({offset: ((num-1)*this.state.limit), page: num});
+    this.setState({offset: ((num-1)*this.state.limit), page: num, search: ''});
 
       this.loadCharacters();
      
