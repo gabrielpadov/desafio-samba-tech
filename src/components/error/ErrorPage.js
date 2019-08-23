@@ -5,8 +5,8 @@ import { Container, Row, Col, Button, Card} from 'react-bootstrap';
 
 const ErrorPage = () => (
   <Container>
-  <Row Row className="justify-content-md-center" style={{ marginTop: '4rem'}}>
-    <Col Col xs={12} md={8}>
+  <Row className="justify-content-md-center" style={{ marginTop: '4rem'}}>
+    <Col xs={12} md={8}>
       <Card className="text-center">
       <a href="/">
       <img 
