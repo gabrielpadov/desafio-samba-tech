@@ -8,11 +8,11 @@ const ErrorPage = () => (
   <Row className="justify-content-md-center" style={{ marginTop: '4rem'}}>
     <Col xs={12} md={8}>
       <Card className="text-center">
-     
-      <img href="/"
+      <img 
         src="https://yt3.ggpht.com/a/AGF-l79rcSfCz8vufHWw5DP4cTMYGvBpu135UlyfWw=s900-c-k-c0xffffffff-no-rj-mo"
         width="20%"
         height="20%"
+        className="d-inline-block align-top"
         alt="Breaking Bad logo"
       />
         <Card.Body>
