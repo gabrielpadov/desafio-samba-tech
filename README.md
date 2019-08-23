@@ -1,24 +1,56 @@
 # desafio-samba-tech
+##########################################################################
+Autor: Gabriel Faria Padovani 
+Data: 23/08/2019
 
-etapa 1 - commit initial *
+Objetivo: processo seletivo em estágio Desenvolvimento Front-End
+##########################################################################
 
-etapa 2 - criar componentes *
+#Etapas
 
-etapa 3 - requisição com API *
+etapa 1 - commit initial e adição de bibliotecas*
+Criação da estrutura inicial do projeto. 
+Foram Adicionadas as dependencias:
+- Bootstrap
+- react-bootstrap
+- react-router-dom
+- Axios
 
-etapa 4 - card *
+etapa 2 - criar componentes
+- Arquivo Main.js criado para configurar as rotas do projeto
+- Arquivo BreakingBad.js é a screen principal do projeto
+- Arquivo ErrorPage.js para quebra do endereço da página
 
-etapa 5 - input search *
+etapa 3 - requisição com API 
+Criei metodo para consumir a API pública 
 
-etapa 6 - layout, logo e navbar * 
+etapa 4 - card 
+Lista de Cards bootstrap com os dados da API
+
+etapa 5 - layout, logo e navbar 
+Adicionei as estruturas e componentes do Bootstrap para definir um layout.
+
+etapa 6 - input search 
+Criei o metodo e componente para filtrar a lista por busca utilizando campo input
 
 etapa 7 - paginação dos Cards
+A tarefa que apresentei mais dificuldade. A paginação está funcional,
+porém necessário um duplo click para execução.
 
 etapa 8 - CSS
 
 etapa 9 - Build no heroku
+Adicinei 3 bibliotecas nas dependencias do projeto: express, path e express-favicon.
+Na raiz do projeto foi criado o arquivo server.js que utiliza o node.js e a biblioteca 
+express para fazer o build e deploy no Heroku.
 
-##########################################################################
+Link: https://desafio-breaking-bad.herokuapp.com/
+
+# Auto-crítica:
+Faltou desenvolver os testes unitários. Tenho pouca prática nessa tarefa e acredito que preciso
+de um pouco mais de prazo para apreender esse metodo.
+
+
 ##########################################################################
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
