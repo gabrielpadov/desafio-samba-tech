@@ -10,13 +10,15 @@ etapa 4 - card *
 
 etapa 5 - input search *
 
-etapa 6 - layout, logo e navbar 
+etapa 6 - layout, logo e navbar * 
 
 etapa 7 - paginação
 
 etapa 8 - CSS
 
 etapa 9 - Modal individual
+
+etapa 10 - Build no heroku
 
 ##########################################################################
 ##########################################################################
