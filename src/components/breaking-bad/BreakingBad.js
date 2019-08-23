@@ -10,29 +10,35 @@ import {Container, Row, Pagination,Badge} from 'react-bootstrap';
 const API_URL = 'https://www.breakingbadapi.com/api';
 
 class BreakingBad extends React.Component {
-  
-  state = {
+  constructor(){
+    super();
+  this.state = {
       characters: [],
       charactersList: [],
       search: '',
       active: 1,
       items: [],
+      offset: 0,
       limit: 8,
-      sizeCharacters: 57
+      sizeCharacters: 57,
+      numPage: 0,
+      page: 1
     }
+    this.onChangeInput = this.onChangeInput.bind(this);
+    this.onChangePagination = this.onChangePagination.bind(this);
+  }
 
   componentDidMount() {
-    this.loadCharacters();
-    this.onChangeInput = this.onChangeInput.bind(this);
-    this.onPagination();
+    this.loadCharacters();   
+    this.onPagination(); 
   }
 
   async loadCharacters() {
     const url = `${API_URL}/characters`;
-    
-      axios.get(url).then(response => {
+
+      axios.get(url+'?limit='+this.state.limit+'&offset='+this.state.offset).then(response => {
       this.setState({ characters: response.data, charactersList: response.data
-         }); // this.sizeCharacters =  response.data.length});
+         });
           console.log(response.data)
           // console.log(this.sizeCharacters);
           // this.onPagination();
@@ -53,18 +59,30 @@ class BreakingBad extends React.Component {
      }
 
 
-    onPagination(){
-      let numPage = parseInt((this.state.sizeCharacters/this.state.limit));
-      console.log(parseInt(numPage));
-    for (let number = 1; number <=numPage+1; number++) {
+  async onPagination(){
+      let numPages = parseInt((this.state.sizeCharacters/this.state.limit));
+      this.setState({numPage: numPages});
+      // console.log(parseInt(numPage));
+    for (let number = 1; number <=numPages+1; number++) {
      this.state.items.push(
-        <Pagination.Item key={number} active={number === this.state.active}>
+        <Pagination.Item key={number} 
+          onClick={(e) => this.onChangePagination(number,e)}>
           {number}
         </Pagination.Item>,
       );
     }
-  }                                                                                                                                                                                                                                             
+  }    
+
+  onChangePagination(num,e){
+    e.preventDefault();                                                                                                                                                                                                                                         
+    // console.log(num);
+    this.setState({offset: ((num-1)*this.state.limit), page: num});
+
+      this.loadCharacters();
+     
+    }
   
+
     render() {
       return (
       <div>
@@ -72,7 +90,6 @@ class BreakingBad extends React.Component {
       <Navbar.Brand>
       <a href="/">
       <img 
-        //src="https://banner2.kisspng.com/20180816/kzi/kisspng-logo-walter-white-vector-graphics-television-show-breaking-bad-png-18-5b754e1068c945.0272561515344143524292.jpg"
         src="https://yt3.ggpht.com/a/AGF-l79rcSfCz8vufHWw5DP4cTMYGvBpu135UlyfWw=s900-c-k-c0xffffffff-no-rj-mo"
         width="20%"
         height="20%"
@@ -97,6 +114,7 @@ class BreakingBad extends React.Component {
   <Row style={{margin: '0.4em'}}>
         { this.state.search && <p style={{color: 'grey'}}>Você pesquisou por "{this.state.search}"</p>}
   </Row>
+    <Pagination style={{ margin: '0.8rem'}} className="justify-content-md-center" size="sm">{this.state.items}</Pagination>
      <Row className="justify-content-md-center">
 
       { this.state.charactersList.map((character) => {
@@ -115,14 +133,14 @@ class BreakingBad extends React.Component {
             <Card.Title>{character.name}</Card.Title>
             <Card.Text>
               <span style={{ fontSize: '0.8rem', marginTop: '0.4rem'}} ><i style={{ marginRight: '0.3rem'}}  className="small material-icons">star </i>{character.birthday}</span><br/>
-              <span style={{ fontSize: '0.6rem'}} >{character.occupation}</span>
+              <span style={{ fontSize: '0.6rem'}} >{character.occupation.toString() }</span>
             </Card.Text>
           </Card.Body>
         </Card>
          
    ) })}
    </Row>
-   <Pagination className="Dark justify-content-md-center" size="sm">{this.state.items}</Pagination>
+   <Pagination className="justify-content-md-center" size="sm">{this.state.items}</Pagination>
    </Container>
    </div> );
   }

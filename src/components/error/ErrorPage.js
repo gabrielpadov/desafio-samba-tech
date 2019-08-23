@@ -5,15 +5,23 @@ import { Container, Row, Col, Button, Card} from 'react-bootstrap';
 
 const ErrorPage = () => (
   <Container>
-  <Row>
+  <Row Row className="justify-content-md-center" style={{ marginTop: '4rem'}}>
     <Col Col xs={12} md={8}>
       <Card className="text-center">
+      <a href="/">
+      <img 
+        src="https://yt3.ggpht.com/a/AGF-l79rcSfCz8vufHWw5DP4cTMYGvBpu135UlyfWw=s900-c-k-c0xffffffff-no-rj-mo"
+        width="20%"
+        height="20%"
+        className="d-inline-block align-top"
+        alt="Breaking Bad logo"
+      /></a>
         <Card.Body>
           <Card.Title>Page not found</Card.Title>
             <Card.Text>
               Sorry, there is nothing to see here
             </Card.Text>
-          <Button variant="primary" href='/'>Back</Button>
+          <Button variant="success" href='/'>Back</Button>
         </Card.Body>
       </Card>
     </Col>
