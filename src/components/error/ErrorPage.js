@@ -13,7 +13,7 @@ const ErrorPage = () => (
         src="https://yt3.ggpht.com/a/AGF-l79rcSfCz8vufHWw5DP4cTMYGvBpu135UlyfWw=s900-c-k-c0xffffffff-no-rj-mo"
         width="20%"
         height="20%"
-        className="d-inline-block align-top"
+        
         alt="Breaking Bad logo"
       /></a>
         <Card.Body>
